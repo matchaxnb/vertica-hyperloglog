@@ -68,8 +68,8 @@ if (BUILD_VERTICA_LIB)
 
   add_library(hll SHARED ${HLL_SRC} src/hll-criteo/HllCombine.cpp src/hll-criteo/HllDistinctCount.cpp src/hll-criteo/HllCreateSynopsis.cpp)
   add_library(loglogbeta SHARED ${HLL_SRC} src/hll-criteo/LogLogBetaDistinctCount.cpp)
-  set_target_properties(hll PROPERTIES COMPILE_FLAGS "${CMAKE_CXX_FLAGS} -march=native")
-  set_target_properties(loglogbeta PROPERTIES COMPILE_FLAGS "${CMAKE_CXX_FLAGS} -march=native")
+  set_target_properties(hll PROPERTIES COMPILE_FLAGS "${CMAKE_CXX_FLAGS}")
+  set_target_properties(loglogbeta PROPERTIES COMPILE_FLAGS "${CMAKE_CXX_FLAGS}")
 
   # Installation process just copies the binary HLL to Vertica lib folder
   if (INSTALL_PREFIX_PATH)
